@@ -1,0 +1,20 @@
+---
+# Service - Provides stable network access to the Task Manager Pods
+apiVersion: v1             # API version for Service resources
+kind: Service             # Resource type - network abstraction
+metadata:                 # Service information
+  name: taskmanager-service
+  namespace: "02220172"    # 📝 Replace 0215539 with your number
+  labels:
+    app: taskmanager
+    student: "02220172"  # 📝 Replace with your student number
+spec:                     # Service specification
+  selector:               # Target Pods with these labels
+    app: taskmanager
+  ports:                  # Port configuration
+  - port: 80             # Port exposed by the Service (external)
+    targetPort: http     # Port on target Pods (refers to named port)
+    protocol: TCP        # Network protocol
+    name: http          # Name for this port mapping
+  type: ClusterIP        # Service type - accessible only within cluster
+                        # Change to LoadBalancer for external access```
