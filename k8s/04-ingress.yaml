@@ -6,7 +6,7 @@ apiVersion: networking.k8s.io/v1  # API version for Ingress resources
 kind: Ingress                     # Resource type - HTTP routing rules
 metadata:                         # Ingress information
   name: taskmanager-ingress
-  namespace: 02220172    # 📝 Replace STUDENT_NUMBER with your number
+  namespace: "02220172"    # 📝 Replace STUDENT_NUMBER with your number
   labels:
     app: taskmanager
     student: "02220172"  # 📝 Replace with your student number
